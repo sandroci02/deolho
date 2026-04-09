@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>deOlho</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app auth-app">
+      <header class="topbar">
+        <h1>deOlho</h1>
+        <p class="auth-subtitle">Acesse seu dashboard em tempo real.</p>
+        <div class="actions stack">
+          <a class="btn" href="/login.html">Entrar</a>
+          <a class="btn" href="/cadastro-usuario.html">Cadastrar usuario</a>
+        </div>
+      </header>
+
+      <footer class="app-footer">
+        <a href="https://linktr.ee/sandroci02" target="_blank" rel="noopener noreferrer">linktr.ee/sandroci02</a>
+        <span class="app-version">v-</span>
+      </footer>
+    </main>
+
+    <script src="/app-meta.js"></script>
+    <script>
+      (async function () {
+        const response = await fetch('/api/auth/me');
+        if (response.ok) {
+          window.location.href = '/lista.html';
+        }
+      })();
+    </script>
+  </body>
+</html>

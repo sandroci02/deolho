@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>deOlho - Nova Câmera</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <h1 id="formTitle">Gerenciar Câmera</h1>
+        <div class="actions">
+          <a class="btn" href="/lista.html">Lista</a>
+          <button id="logoutButton" class="btn btn-danger" type="button">Sair</button>
+        </div>
+      </header>
+
+      <section class="crud-panel info-panel">
+        <h2>Guia Rápido da Câmera</h2>
+        <p class="text-muted">Use estas orientações antes de salvar para evitar câmera offline.</p>
+
+        <details open>
+          <summary>O que configurar na câmera</summary>
+          <ul>
+            <li>Habilitar RTSP na câmera/NVR.</li>
+            <li>Habilitar ONVIF (se disponível).</li>
+            <li>Criar usuário com permissão de visualização RTSP.</li>
+            <li>Confirmar portas: RTSP (geralmente 554) e ONVIF (geralmente 8000 ou 80).</li>
+            <li>Preferir IP fixo (ou reserva DHCP no roteador).</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>Como descobrir e validar IP/porta</summary>
+          <ul>
+            <li>No roteador: lista de clientes DHCP para identificar IP atual.</li>
+            <li>No app da câmera: procurar seção Rede / Network / TCP-IP.</li>
+            <li>Testar RTSP: <code>rtsp://usuario:senha@IP:554/caminho</code>.</li>
+            <li>Se não abrir, revise usuário/senha, caminho RTSP e firewall da rede.</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>Como visualizar informações da câmera no deOlho</summary>
+          <ul>
+            <li>Tela <strong>Organizar Dashboard</strong>: mostra IP e protocolo de cada câmera.</li>
+            <li>Tela <strong>Lista</strong> em modo expandido: mostra IP, porta RTSP, ONVIF e caminho.</li>
+            <li>Tela <strong>Gerenciar Câmera</strong>: permite editar nome, IP e senha rapidamente.</li>
+          </ul>
+        </details>
+      </section>
+
+
+
+      <section class="crud-panel">
+        <p id="formMessage" class="form-message hidden"></p>
+        <form id="cameraForm" class="form-grid">
+          <input type="hidden" id="cameraId" />
+
+          <label>
+            Nome
+            <input id="nome" placeholder="Ex: Sala de Estar" required />
+          </label>
+
+          <label>
+            Endereço IP
+            <input id="ip" placeholder="Ex: 192.168.1.100" required />
+          </label>
+
+          <label>
+            Senha da Câmera
+            <input id="senha" type="password" placeholder="Sua senha da câmera" required />
+          </label>
+
+          <div class="form-actions" style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
+            <button id="saveButton" type="submit" class="btn btn-primary" style="flex: 1; min-width: 200px;">Salvar Configurações</button>
+            <button id="deleteButton" type="button" class="btn btn-danger hidden" style="flex: 1; min-width: 150px;">Excluir Câmera</button>
+            <a class="btn" href="/lista.html" style="flex: 1; min-width: 120px; justify-content: center;">Cancelar</a>
+          </div>
+        </form>
+      </section>
+
+      <footer class="app-footer">
+        <a href="https://linktr.ee/sandroci02" target="_blank" rel="noopener noreferrer">linktr.ee/sandroci02</a>
+        <span class="app-version">v-</span>
+      </footer>
+    </main>
+
+    <script src="/auth.js"></script>
+    <script src="/app-meta.js"></script>
+    <script src="/nova.js"></script>
+  </body>
+</html>

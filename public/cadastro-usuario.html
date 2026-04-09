@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Usuário | deOlho</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app auth-app">
+      <section class="auth-panel">
+        <h1>Criar Conta</h1>
+        <p class="auth-subtitle">Cadastre seu acesso para monitorar suas câmeras.</p>
+
+        <p id="authMessage" class="form-message hidden"></p>
+
+        <form id="registerForm" class="form-grid auth-form">
+          <label>
+            Nome
+            <input id="nome" autocomplete="name" required />
+          </label>
+
+          <label>
+            Usuário
+            <input id="usuario" autocomplete="username" required />
+          </label>
+
+          <label>
+            Senha
+            <input id="senha" type="password" autocomplete="new-password" minlength="4" required />
+          </label>
+
+          <button id="registerButton" class="btn btn-primary" style="width: 100%; margin-top: 10px;" type="submit">Finalizar Cadastro</button>
+        </form>
+
+        <p class="auth-link-row">
+          Já tem conta?
+          <a href="/login.html">Entrar</a>
+        </p>
+
+        <footer class="app-footer">
+          <a href="https://linktr.ee/sandroci02" target="_blank" rel="noopener noreferrer">linktr.ee/sandroci02</a>
+          <span class="app-version">v-</span>
+        </footer>
+      </section>
+    </main>
+
+    <script src="/app-meta.js"></script>
+    <script src="/cadastro-usuario.js"></script>
+  </body>
+</html>

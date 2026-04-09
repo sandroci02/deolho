@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>deOlho - Login</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app auth-app">
+      <section class="auth-panel">
+        <h1>deOlho</h1>
+        <p class="auth-subtitle">Entre para acessar suas câmeras em tempo real.</p>
+
+        <p id="authMessage" class="form-message hidden"></p>
+
+        <form id="loginForm" class="form-grid auth-form">
+          <label>
+            Usuário
+            <input id="usuario" autocomplete="username" required />
+          </label>
+
+          <label>
+            Senha
+            <input id="senha" type="password" autocomplete="current-password" required />
+          </label>
+
+          <button id="loginButton" class="btn btn-primary" style="width: 100%; margin-top: 10px;" type="submit">Entrar no Dashboard</button>
+        </form>
+
+        <p class="auth-link-row">
+          Sem conta?
+          <a href="/cadastro-usuario.html">Criar usuário</a>
+        </p>
+
+        <footer class="app-footer">
+          <a href="https://linktr.ee/sandroci02" target="_blank" rel="noopener noreferrer">linktr.ee/sandroci02</a>
+          <span class="app-version">v-</span>
+        </footer>
+      </section>
+    </main>
+
+    <script src="/app-meta.js"></script>
+    <script src="/login.js"></script>
+  </body>
+</html>

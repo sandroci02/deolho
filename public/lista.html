@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>deOlho</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <h1>deOlho</h1>
+        <div class="actions">
+          <a class="btn" href="/configuracoes.html" title="Configurações do Dashboard">⚙️ Organizar</a>
+          <button id="logoutButton" class="btn btn-danger">Sair</button>
+        </div>
+      </header>
+
+
+
+      <p id="appMessage" class="form-message hidden"></p>
+
+      <section id="cameraGrid" class="grid"></section>
+
+      <footer class="app-footer">
+        <a href="https://linktr.ee/sandroci02" target="_blank" rel="noopener noreferrer">linktr.ee/sandroci02</a>
+        <span class="app-version">v-</span>
+      </footer>
+    </main>
+
+    <template id="cameraCardTemplate">
+      <article class="card">
+        <div class="card-head">
+          <h2 class="name"></h2>
+          <span class="badge">offline</span>
+        </div>
+        <p class="meta"></p>
+        <div class="player-wrap">
+          <img class="player" alt="stream da camera" />
+        </div>
+
+
+        <div class="actions">
+          <button class="btn reconnect">Reconectar</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="/auth.js"></script>
+    <script src="/app-meta.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.3/dist/coco-ssd.min.js"></script>
+    <script src="/lista.js"></script>
+  </body>
+</html>

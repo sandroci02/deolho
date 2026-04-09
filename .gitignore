@@ -1,0 +1,29 @@
+# Dependencias e artefatos gerados
+node_modules/
+dist/
+out/
+release/
+build/
+coverage/
+*.tsbuildinfo
+
+# Arquivos locais sensiveis
+.env
+.env.*
+!.env.example
+cameras.ini
+cameras.db
+camera-debug.log
+*.log
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+*.db-journal
+
+# Capturas e arquivos temporarios locais
+screenshots/
+
+# Arquivos do sistema/IDE
+.DS_Store
+Thumbs.db
